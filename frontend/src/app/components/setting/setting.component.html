@@ -1,0 +1,12 @@
+<app-sidebar [orgname]="orgname" [email]="userEmail"></app-sidebar>
+<app-header [orgname]="orgname" [email]="userEmail"></app-header>
+<div class="settings-container">
+    <h2>Settings</h2>
+    <div class="settings-section">
+      <h3>Theme Settings</h3>
+      <label>
+        <input type="checkbox" [(ngModel)]="theme.darkMode" (change)="toggleDarkMode()" />
+        Dark Mode
+      </label>
+    </div>
+  </div>

@@ -1,0 +1,34 @@
+
+<div class="container">
+  
+    <div class="form-container">
+  <form >
+
+
+    <div class="input-group">
+      <label for="FirstName">First name:</label>
+      <input type="text" id="firstname" [(ngModel)]="userobj.firstName" name="firstname" >
+    </div>
+    <br>
+    <div class="input-group">
+      <label for="email">Last Name:</label>
+      <input type="text" id="lastname" [(ngModel)]="userobj.lastName" name="lastname" >
+    </div>
+    <div class="input-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" [(ngModel)]="userobj.email" name="email" >
+    </div>
+    <br>
+    <div class="input-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" [(ngModel)]="userobj.password" name="password" >
+    </div>
+    <div class="button-group">
+      <button type="submit" class="btn btn-primary" (click)="onSubmit()">Register</button>
+    </div>
+  </form>
+  <div class="top-right-image">
+    <img src="/assets/image/reg.png" alt="Description" class="small-image">
+  </div>
+</div>
+  </div>

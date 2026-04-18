@@ -1,0 +1,56 @@
+<app-sidebar [orgname]="orgname" [email]="email"></app-sidebar>
+<app-header [orgname]="orgname" [email]="email"></app-header>
+<div class="container">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Serial Number</th>
+        <th>Username</th>
+        <th>Email Address</th>
+        <th>Phone Number</th>
+        <th>Channel Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let user of users; let i = index">
+        <tr>
+          <td>{{ i+1 }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.phone }}</td>
+          <td>{{ user.channelName }}</td>
+          <td>
+            <ng-container *ngIf="!user.editing">
+              <button class="edit-button" (click)="toggleEdit(user)">Edit</button>
+              <button class="delete-button" (click)="deleteUser(user.id)">Delete</button>
+            </ng-container>
+          </td>
+        </tr>
+        <tr *ngIf="user.editing">
+          <td colspan="6">
+           
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+
+  <!-- Edit Form outside the table -->
+  <ng-container *ngFor="let user of users">
+    <div class="edit-form" *ngIf="user.editing">
+      <label>Username:</label>
+      <input type="text" [(ngModel)]="user.username" /><br />
+      <label>Email Address:</label>
+      <input type="text" [(ngModel)]="user.email" /><br />
+      <label>Phone Number:</label>
+      <input type="text" [(ngModel)]="user.phone" /><br />
+      <label>Channel Name:</label>
+      <select id="channel" name="channel" [(ngModel)]="user.channelName" required>
+        <option *ngFor="let channel of channels" [value]="channel">{{ channel }}</option>
+      </select><br/> <br/>
+      <button class="save-button" (click)="saveUser(user)">Save</button>
+      <button class="cancel-button" (click)="cancelEdit(user)">Cancel</button>
+    </div>
+  </ng-container>
+</div>

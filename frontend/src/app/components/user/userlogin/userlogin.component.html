@@ -1,0 +1,35 @@
+
+<div class="container">
+
+  
+    <form>
+      <div class="input-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" [(ngModel)]="userobj.email" name="email" required>
+      </div>
+      <br>
+      <div class="input-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" [(ngModel)]="userobj.password" name="password" required>
+      </div>
+      <br>
+      
+
+      <!-- <p class="channel-name">Channel: {{ channelName }}</p> -->
+    <br>
+      <div class="button-group">
+        <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+      </div>
+    </form>
+    <div class="top-right-image">
+      <img src="/assets/image/login.png" alt="Description" class="small-image">
+    </div>
+    
+    <div>
+      <button (click)="navigateToRegister()" class="btn-link styled-button">New user? Register here</button>
+  </div>
+   <!-- Forgot Password Link -->
+   <div class="forgot-password">
+    <button (click)="navigateToForgotPassword()" class="btn-link styled-button">Forgot Password? Reset here</button>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  /* Add any other dark mode styles here */
+  .settings-container {
+    padding: 20px;
+  }
+  
+  .settings-section {
+    margin-bottom: 20px;
+  }
+  
+  .settings-section h3 {
+    margin-bottom: 10px;
+  }
+  
+  .settings-section label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  

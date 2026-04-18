@@ -1,0 +1,36 @@
+<header class="header">
+  
+    <div class="brand">
+      <h1>{{ orgname }} Workspace</h1>
+    </div>
+    <nav class="nav">
+      <a (click)="toggleProfile($event)">Profile</a>
+     
+       
+        <a (click)="logout()">Logout</a>
+      </nav>
+      <div class="profile-section" *ngIf="showProfile">
+        <h2>Edit Profile</h2>
+        <form (ngSubmit)="saveProfile()">
+          <div>
+            <label for="name">Name:</label>
+            <input id="name" [(ngModel)]="editableName" name="name" type="text"/>
+          </div>
+          <div>
+            <label for="phone">Phone:</label>
+            <input id="phone" [(ngModel)]="editablePhone" name="phone" type="text"/>
+          </div>
+         
+          <div>
+            <label for="address">Address:</label>
+            <input id="address" [(ngModel)]="editableAddress" name="address" type="text"/>
+          </div>
+          <div>
+            <label for="dob">Date of Birth:</label>
+            <input id="dob" [(ngModel)]="editableDob" name="dob" type="date"/>
+          </div>
+          <button type="submit">Save</button>
+          <button type="button" (click)="cancelEdit()">Cancel</button>
+        </form>
+      </div>
+    </header>

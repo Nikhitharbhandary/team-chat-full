@@ -1,0 +1,254 @@
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: calc(100% - 150px); /* Adjust based on your sidebar width */
+  margin-left: 150px; /* Adjust based on your sidebar width */
+  background-color: #e5ddd5;
+}
+
+/* Header and Options Panel Styles */
+.chat-header {
+  padding: 10px;
+  background-color: #075e54;
+  color: white;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer; /* Make the header clickable */
+  margin-top: 80px;
+  margin-left: 100px;
+}
+
+
+.search-container {
+  margin: 10px;
+  padding: 5px;
+  background-color: #f1f1f1; /* Light background color for better visibility */
+  border-radius: 5px; /* Rounded corners for a modern look */
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+
+}
+
+.search-container input {
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 8px;
+  margin-left: 100px;
+  width: 100%;
+  font-size: 16px;
+  color: #333; /* Dark text for readability */
+}
+
+.search-container input::placeholder {
+  color: #aaa; /* Placeholder text color */
+}
+
+.search-container mat-icon {
+  color: #666; /* Icon color */
+  margin-right: 8px; /* Space between icon and input field */
+}
+
+.search-container input:focus {
+  border-bottom: 2px solid #007bff; /* Highlight border color on focus */
+  transition: border-color 0.3s ease;
+}
+
+.no-results {
+  text-align: center;
+  color: #d9534f; /* Red color for no results message */
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.options-panel {
+  padding: 10px;
+  background-color: #dcf8c6;
+  color: rgb(25, 24, 24);
+  margin-left: 100px;
+}
+
+.options-panel .user-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.options-panel .user-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.options-panel .user-avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.options-panel .user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.options-panel .username {
+  font-weight: bold;
+}
+
+.options-panel .last-seen {
+  font-size: 0.8em;
+  color: #888;
+}
+
+/* Chat Body Styles */
+.chat-body {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background-color: #dcf8c6;
+  margin-left: 10px;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 10px;
+  max-width: 20%;
+  word-wrap: break-word;
+  position: relative;
+  left: 100px;
+}
+
+.message.received {
+  background-color: white;
+  align-self: flex-start;
+}
+
+.message.sent {
+  background-color: #dcf8c6;
+  align-self: flex-end;
+ 
+}
+
+.username {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.text {
+  margin-bottom: 5px;
+}
+/* File Display */
+.file-preview {
+max-width: 100%;
+max-height: 300px; /* Limit height for large images/videos */
+object-fit: cover;
+border-radius: 8px;
+margin-top: 5px;
+}
+
+.time {
+  font-size: 0.8em;
+  color: gray;
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+}
+
+/* Chat Footer Styles */
+.chat-footer {
+  padding: 10px;
+  background-color: #075e54;
+  border-top: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  margin-left: 100px;
+}
+
+.chat-footer input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 20px;
+}
+
+.chat-footer button {
+  padding: 10px 15px;
+  margin-left: 5px;
+  background-color: #128c7e;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.chat-footer button:hover {
+  background-color: #075e54;
+}
+
+/* Responsive Layout */
+@media (max-width: 760px) {
+  .chat-container {
+    width: 100%;
+    margin-left: 0;
+  }
+  .message {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    max-width: 35%;
+    word-wrap: break-word;
+    position: relative;
+    left: 0;
+  }
+  
+  .chat-header {
+    margin-left: 0;
+  }
+
+  .options-panel {
+    margin-left: 0;
+  }
+
+  .chat-footer {
+    margin-left: 0;
+  }
+}
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.file-preview {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.image-control {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.image-control:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.zoomed {
+  transform: scale(1.2);
+  transition: transform 0.2s;
+}

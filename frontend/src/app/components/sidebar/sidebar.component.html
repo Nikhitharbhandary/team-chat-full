@@ -1,0 +1,57 @@
+<div class="header">
+  <button class="menu-btn" (click)="toggleSidebar()">
+    <span class="material-icons">menu</span>
+  </button>
+</div>
+
+<div class="sidebar" [class.active]="isSidebarVisible">
+  <h2>
+    <span class="material-icons" style="color: #ff6347;">forum</span>
+    <span class="brand-text">Team Chat</span>
+  </h2>
+  
+  <ul>
+    <li>
+      <a [routerLink]="['/admin/channel']" [queryParams]="{ orgname: orgname, email: email }" class="nav-link">
+        <span class="material-icons">woman</span>
+        Create Channel
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/admin/view_channel']" [queryParams]="{ orgname: orgname, email: email }" class="nav-link">
+        <span class="material-icons">woman</span>
+        View Channel
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/admin/people']" [queryParams]="{ orgname: orgname, email: email }" class="nav-link">
+        <span class="material-icons">people</span>
+        Invite People
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/admin/usermanage']" [queryParams]="{ orgname: orgname, email: email }" class="nav-link">
+        <span class="material-icons">groups</span>
+        User Management
+      </a>
+    </li> 
+     <li>
+      <a [routerLink]="['/admin/fetchchannel']" [queryParams]="{ orgname: orgname, email: email }" class="nav-link">
+        <span class="material-icons">chat</span>
+        Group Chat
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/admin/fetch_user']" [queryParams]="{ orgname: orgname, email: email }" class="nav-link">
+        <span class="material-icons">chat</span>
+       Direct Message
+      </a>
+    </li>
+    <!-- <li>
+      <a [routerLink]="['/admin/setting']" [queryParams]="{ orgname: orgname, email: email }" class="nav-link">
+        <span class="material-icons">settings</span>
+        Settings
+      </a>
+    </li> -->
+  </ul>
+</div>

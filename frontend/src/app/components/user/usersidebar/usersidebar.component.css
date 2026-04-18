@@ -1,0 +1,154 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 6px 0 10px rgba(0, 0, 0, 1); /* This applies shadow only to the right side */
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  top: 0;
+  z-index: 1000;
+}
+
+.menu-btn {
+  display: none; /* Hide by default */
+  background: none;
+  border: none;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: white;
+  color: #ecf0f1;
+  padding: 10px;
+  position: fixed;
+  bottom: -80px;
+  left: 0;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+}
+
+.sidebar.active {
+  transform: translateX(0);
+}
+
+.sidebar h2 {
+  margin: 0;
+  padding: 10px 0;
+  font-size: 1.8em;
+  text-align: center;
+  border-bottom: 1px solid white;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 60px 0;
+}
+
+.sidebar ul li a {
+  color: black;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 4px;
+  font-size: 1.3em;
+}
+
+.sidebar ul li a .material-icons {
+  margin-right: 10px;
+  font-size: 2.0em;
+}
+
+.sidebar ul li a:hover {
+  background-color: #2c3e50;
+  color: #3498db;
+}
+
+.active-link {
+  background-color: #2980b9;
+  color: #ffffff;
+}
+
+.brand-text {
+  font-family: 'Arial', sans-serif; /* Example font family */
+  font-size: 4x; /* Example font size */
+  font-weight: bold; /* Example font weight */
+  color: #007bff; /* Example text color */
+}
+
+/* Media Query for Responsive Design */
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block; /* Show on mobile */
+  }
+
+  .sidebar {
+    width: 250px; /* Adjust sidebar width for smaller screens */
+    transform: translateX(-100%); /* Hide sidebar by default */
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .sidebar h2, .brand-text {
+    font-size: 1.0em; /* Decrease heading font size */
+  }
+
+  .sidebar ul li {
+    margin: 9px 0;
+    font-size: 0.6em;
+  }
+
+  .sidebar ul li a {
+    padding: 30px; /* Adjust link padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 100px; 
+    padding: 2px;
+    margin-top: 60px;
+  }
+
+  .sidebar h2, .brand-text {
+    font-size: 10px; 
+  }
+
+  .sidebar ul li {
+    margin-top: 40px;
+    margin-left: -20px;
+  }
+
+  .sidebar ul li a {
+    padding: 15px;
+    font-size: 10px;
+  }
+
+  .sidebar img {
+    width: 80px; 
+    height: 80px;
+    margin-bottom: 10px; 
+  }
+}

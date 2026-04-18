@@ -1,0 +1,100 @@
+
+
+<header class="header">
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="logo">
+        <img src="/assets/image/tc.png" alt="TeamChat Logo">
+      
+      </a>
+      <ul class="nav-links" [class.active]="isMenuOpen">
+        <li><a routerLink="/" class="nav-link">Home</a></li>
+        <li><a (click)="scrollToSection('features')" class="nav-link">Features</a></li>
+        <li><a  (click)="scrollToSection('about')" class="nav-link">About</a></li>
+        <li><a href="/admin/login" class="nav-link">Login</a></li>
+      </ul>
+      <div class="hamburger" (click)="toggleMenu()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </div>
+  </nav>
+  <div class="hero">
+    <div class="container">
+      <h1>Welcome to TeamChat</h1>
+      <p>TeamChat is the ultimate communication platform for teams. Connect, collaborate, and achieve more together.</p>
+      <img src="/assets/image/tchat.jpg" class="responsive-image1">
+      <br>
+      <br>
+
+      <a href="/admin/login" class="cta-button">Sign Up</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="features"  id="features">
+    <h2>Features</h2>
+  <br>
+    <div class="container">
+      
+  
+      <div class="feature">
+        <h3>Real-time Messaging</h3>
+        <p>Instantly send messages to your team members and get responses in real-time.</p>
+        <img src="/assets/image/msg.jpg" class="responsive-image">
+      </div>
+      <div class="feature">
+        <h3>File Sharing</h3>
+        <p>Easily share files and documents with your team to keep everyone on the same page.</p>
+        <img src="/assets/image/filesh.avif" class="responsive-image">
+      </div>
+      <div class="feature">
+        <h3>Search And Discovery</h3>
+        <p>Online collaboration tools improve efficiency with smart search and personalized content discovery.</p>
+        <img src="/assets/image/search.avif" class="responsive-image">
+      </div>
+      <div class="feature">
+        <h3>Integrations</h3>
+        <p>Integrate with your favorite tools to streamline your workflow.</p>
+        <img src="/assets/image/integration.jpg" class="responsive-image">
+      </div>
+    </div>
+  </section>
+
+  <section class="about"  id="about">
+    <div class="container">
+      <h2>About Team Chat</h2>
+      <div class="about">
+        <h3>Seamless Communication for Teams</h3>
+        <p>TeamChat is the ultimate platform for team collaboration and communication. Whether you're working on a project, organizing events, or just staying connected, TeamChat has got you covered.</p>
+       <br>
+       <img src="/assets/image/abt.avif" class="responsive-image">
+       <br>
+       <br>
+        <h3> Why Choose TeamChat?</h3>
+       <p>. User-Friendly Interface: Designed with simplicity and efficiency in mind.
+        Scalable: Whether you're a small team or a large organization, TeamChat scales with your needs.
+        Reliable: Built with robust technology to ensure seamless and uninterrupted communication.</p>
+      </div>
+     
+    </div>
+  </section>
+
+
+
+  <section class="cta">
+    <div class="container">
+      <h2>Get Started with TeamChat Today!</h2>
+      <p>Sign up now and transform the way your team communicates.</p>
+      <a href="/admin/login" class="cta-button">Sign Up</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2024 TeamChat. All rights reserved.</p>
+  </div>
+</footer>

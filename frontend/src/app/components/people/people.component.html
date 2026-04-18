@@ -1,0 +1,26 @@
+
+
+<div class="container">
+  <form (ngSubmit)="onSubmit()">
+    <div class="input-group">
+      <label for="email">Enter the Email Address to Invite:</label>
+      <input type="email" id="emailid" name="email" [(ngModel)]="userobj.emailid" required>
+    </div>
+    <br>
+    <div class="input-group">
+      <label for="channel">Select channel:</label>
+      <select id="channel" name="channel" [(ngModel)]="userobj.channelname" required>
+        <option *ngFor="let channel of channels" [value]="channel">{{ channel }}</option>
+      </select>
+    </div>
+    <br>
+    <div class="button-group">
+      <button type="submit" class="btn btn-primary">Send Invitation</button>
+    </div>
+  </form>
+  <div class="top-right-image">
+    <img src="/assets/image/login.png" alt="Description" class="small-image">
+  </div>
+</div>
+<app-sidebar [orgname]="orgname" [email]="email"></app-sidebar>
+<app-header [orgname]="orgname" [email]="email"></app-header>

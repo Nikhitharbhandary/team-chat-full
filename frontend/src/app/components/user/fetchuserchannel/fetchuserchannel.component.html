@@ -1,0 +1,24 @@
+
+<div class="page-wrapper">
+    <div class="main-container">
+      <div class="welcome-message">
+        Hi, welcome to team chat!
+      </div>
+      <div class="inner-container">
+        <div class="channel-container" *ngIf="channels.length > 0">
+          <h2>Your Channels</h2>
+          <ul>
+            <li *ngFor="let channel of channels">
+              <button class="btn-link styled-button" (click)="gotoChannel(channel)">
+                {{ channel }}
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div *ngIf="channels.length === 0">
+          <p>No channels available.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

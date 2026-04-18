@@ -1,0 +1,85 @@
+
+
+
+<div class="chat-container">
+  
+  <!-- Header with collapsible functionality -->
+  <div class="chat-header" (click)="toggleOptionsPanel()">
+    <h2>{{ channelName }} Channel</h2> 
+    <!-- Header options with icons -->
+    <div class="header-options">
+
+      <span (click)="toggleSearch()">
+        <mat-icon>search</mat-icon>
+      </span>
+      <button class="leave-button" (click)="leaveChannel()">Leave</button>
+    </div>
+  </div>
+
+  <!-- Collapsible panel for options -->
+  <div class="options-panel" *ngIf="showOptionsPanel">
+    
+    
+    <!-- Option: User List (WhatsApp Style) -->
+    <div class="option user-list">
+     
+      <div class="user-list-container">
+        <div *ngFor="let user of invitedUsers" class="user-item">
+          <div class="user-avatar">
+            <img src="assets/image/avatar.jpg" alt="Avatar">
+          </div>
+          <div class="user-details">
+            <div class="username">{{ user.username }}</div>
+            <div class="last-seen">Last seen today</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Search input field -->
+  <div class="search-container" *ngIf="showSearch">
+    <input [(ngModel)]="searchQuery" (input)="searchMessages()" placeholder="Search messages..." />
+  </div>
+
+  <!-- Display no results message -->
+  <div *ngIf="noResults" class="no-results">No results found</div>
+
+ <!-- Chat messages container -->
+ <div class="chat-body">
+  <div class="message received" *ngFor="let message of filteredMessages">
+    <span class="username">{{ message.username }}</span>
+    <span class="text" [innerHTML]="highlightSearchTerm(message.text)"></span>
+
+    
+ <!-- Display file attachments -->
+ <div *ngIf="message.file" class="file-attachments">
+  <ng-container *ngIf="isImage(message.file)">
+    <div class="image-container">
+      <img [src]="getFileUrl(message.file)" alt="Image preview" class="file-preview" />
+      <!-- Add a button to download the image -->
+      <button (click)="downloadImage(message.file)" class="image-control">Preview</button>
+   
+    </div>
+  </ng-container>
+  <ng-container *ngIf="isVideo(message.file)">
+    <video [src]="getFileUrl(message.file)" controls class="file-preview"></video>
+  </ng-container>
+  <ng-container *ngIf="isDocument(message.file)">
+    <a [href]="getFileUrl(message.file)" target="_blank" class="file-link">{{ getFileName(message.file) }}</a>
+  </ng-container>
+</div>
+
+<div class="time">{{ message.timestamp | date: 'h:mm a' }}</div>
+</div>
+</div>
+
+  <!-- Footer for sending messages and attachments -->
+<div class="chat-footer">
+  <input type="text" [(ngModel)]="newMessage" placeholder="Type a message..." />
+  <input type="file" (change)="uploadFile($event)" id="fileInput" hidden />
+  <button (click)="triggerFileInput()">Attach</button>
+  <button (click)="sendMessage()">Send</button>
+</div>
+</div>
+<app-usersidebar [email]="email" [orgname]="orgname" [channelName]="channelName" [username]="username"></app-usersidebar>
+<!-- <app-userheader [orgname]="orgname" [channelName]="channelName" [username]="username"></app-userheader> -->

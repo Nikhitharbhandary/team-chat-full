@@ -1,0 +1,93 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Header */
+.header {
+  width: calc(100% - 250px); /* Adjusted for sidebar width */
+  height: 80px; /* Increased height */
+  background-color: white;
+  color: blue;
+  font-weight: bold;
+  padding: 20px 30px; /* Increased padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 250px; /* Adjusted for sidebar width */
+  z-index: 1000;
+  box-shadow: 5px 0 10px rgba(0, 0, 0, 0); /* This applies shadow only to the right side */
+}
+
+.header .brand h1 {
+  margin: 0;
+  font-size: 2em; /* Increased font size */
+}
+
+.header .nav {
+  display: flex;
+  align-items: center;
+}
+
+.header .nav a {
+  color: black;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 1.2em; /* Increased font size */
+}
+
+.header .nav a:hover {
+  color: #3498db;
+}
+
+/* Hamburger Button */
+.menu-btn {
+  display: none; /* Hide by default */
+  background: none;
+  border: none;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+/* Media Query for Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    width: calc(100% - 60px); /* Adjust width for smaller sidebar */
+    left: 60px; /* Adjust left position for smaller sidebar */
+    padding: 15px 20px;
+  }
+
+  .header .brand h1 {
+    font-size: 1.8em; /* Decrease font size */
+  }
+
+  .header .nav a {
+    font-size: 1em; /* Decrease font size */
+    margin-left: 15px; /* Adjust margin */
+  }
+
+  .menu-btn {
+    display: block; /* Show on tablet and mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    width: 95%; /* Full width */
+    left: 30px; /* No sidebar */
+    padding: 10px 15px; /* Adjust padding */
+  }
+
+  .header .brand h1 {
+    font-size: 1.3em; /* Decrease font size */
+  }
+
+  .header .nav a {
+    font-size: 0.9em; /* Decrease font size */
+    margin-left: 25px; /* Adjust margin */
+    cursor: pointer;
+  }
+}

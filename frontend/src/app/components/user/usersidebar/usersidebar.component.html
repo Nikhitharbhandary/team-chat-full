@@ -1,0 +1,29 @@
+
+
+<div class="header">
+  <button class="menu-btn" (click)="toggleSidebar()">
+    <span class="material-icons">menu</span>
+  </button>
+</div>
+
+<div class="sidebar" [class.active]="isSidebarVisible">
+  <h2>
+    <span class="material-icons" style="color: #ff6347;">forum</span>
+    <span class="brand-text">Team Chat</span>
+  </h2>
+  
+  <ul>
+    <li>
+      <a [routerLink]="['/user/userchat']" [queryParams]="{email: email, orgname: orgname, channelName: channelName, username: username }" class="nav-link">
+        <span class="material-icons">chat</span>
+        Group Chat
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/user/userdm']" [queryParams]="{ email: email, orgname: orgname, channelName: channelName, username: username }" class="nav-link">
+        <span class="material-icons">chat</span>
+        Chat with Admin
+      </a>
+    </li>
+  </ul>
+</div>

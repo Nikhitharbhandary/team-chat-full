@@ -1,0 +1,41 @@
+
+
+<div class="page-wrapper">
+  <div class="main-container">
+    <div class="welcome-message">
+      Hi, welcome to team chat!
+      
+    </div>
+    <div class="inner-container">
+      <div class="organization-container" *ngIf="organizationExists">
+        <h2>Your Workspace</h2>
+        <ul>
+          <li *ngFor="let organization of organizations">
+           
+            <button class="btn-link styled-button"  (click)="gotoDashboard(organization.orgname)">
+              {{ organization.orgname }}
+            </button>
+            <button class="btn-delete" (click)="deleteOrganization(organization.orgname)"> Delete</button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="vertical-line"></div>
+
+      <div class="form-container">
+        <form (ngSubmit)="onSubmit()">
+          <div class="input-group">
+            <label for="orgname">Enter the Workspace Name:</label>
+            <br><br>
+            <input type="text" id="orgname" [(ngModel)]="userobj.orgname" name="orgname" required>
+          </div>
+          <div class="button-group">
+            <button type="submit" class="btn btn-primary">Create</button> &nbsp;
+            
+          </div>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>

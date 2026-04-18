@@ -1,0 +1,184 @@
+.container {
+  padding: 20px; /* Adjusted padding to move content down */
+  margin-left: 250px; /* Adjust for sidebar width */
+  transition: margin-left 0.3s; /* Smooth transition for margin changes */
+}
+
+/* Table styles */
+.styled-table {
+  width: 130%; /* Adjusted width for larger screens */
+  border-collapse: collapse;
+  margin: 20px -15px;
+  text-align: left;
+  background-color: #f9f9f9; /* Light background for the table */
+}
+
+.styled-table th {
+  padding: 45px 20px;
+  background-color: #007bff; /* Header background color */
+  color: #ffffff; /* Header text color */
+  font-size: 1.2em; /* Adjusted font size */
+}
+
+.styled-table td {
+  padding: 12px 10px;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3; /* Alternating row colors */
+}
+
+.styled-table tbody tr:nth-of-type(odd) {
+  background-color: #ffffff;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #007bff;
+}
+
+/* Button styles */
+.edit-button {
+  background-color: #28a745; /* Edit button color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.9em;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.delete-button {
+  background-color: #dc3545; /* Delete button color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.9em;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.edit-button:hover {
+  background-color: #218838; /* Darker green on hover */
+  opacity: 0.9;
+}
+
+.delete-button:hover {
+  background-color: #c82333; /* Darker red on hover */
+  opacity: 0.9;
+}
+
+/* Tablet View */
+@media (max-width: 900px) {
+  .container {
+    margin-left: 0; /* Adjust margin for smaller sidebar */
+    padding: 50px 20px; /* Adjusted padding */
+    
+  }
+
+  .styled-table {
+    width: 100%; /* Full width for tablets */
+    
+  }
+
+  .styled-table th, .styled-table td {
+    padding: 10px;
+    font-size: 0.9em; /* Adjust font size */
+  }
+
+  .edit-button, .delete-button {
+    padding: 8px 16px;
+    font-size: 0.8em;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 480px) {
+  .container {
+    margin-left: 0; /* No sidebar */
+ 
+  }
+
+
+  
+
+ 
+  .styled-table td {
+    padding: 12px 10px;
+  }
+
+  .edit-button, .delete-button {
+    padding: 6px 12px;
+    font-size: 0.7em;
+  }
+}
+
+/* Extra Small Screens (e.g., very narrow mobile screens) */
+@media (max-width: 360px) {
+  .container {
+    padding: 5px; /* Further adjust padding */
+  }
+
+  .styled-table th, .styled-table td {
+    padding: 6px; /* Further adjust cell padding */
+    font-size: 0.7em; /* Further decrease font size */
+  }
+
+  .edit-button, .delete-button {
+    padding: 4px 8px; /* Further adjust button padding */
+    font-size: 0.6em; /* Further decrease font size */
+  }
+}
+
+.edit-form {
+  max-width: 500px; /* Adjust width as needed */
+  margin: 20px auto; /* Center horizontally and add spacing */
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9; /* Light gray background */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow for depth */
+}
+
+.edit-form label {
+  display: block;
+  margin-bottom: 10px;
+  color: #333; /* Dark gray text */
+}
+
+.edit-form input,
+.edit-form select {
+  width: calc(100% - 20px);
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.edit-form .save-button,
+.edit-form .cancel-button {
+  padding: 8px 15px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-form .save-button {
+  background-color: #4CAF50; /* Green background */
+  color: white;
+}
+
+.edit-form .cancel-button {
+  background-color: #f44336; /* Red background */
+  color: white;
+}

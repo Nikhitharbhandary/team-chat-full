@@ -1,0 +1,38 @@
+
+
+<!-- Only show the container if showContainer is true -->
+<div class="container" *ngIf="showContainer">
+    <form (ngSubmit)="onSubmit()">
+        <div class="input-group">
+            <label for="orgname">Enter the Channel Name:</label>
+            <br><br>
+            <input type="text" id="channelname" [(ngModel)]="userobj.channelname" name="channelname" required>
+        </div>
+        <div class="button-group">
+            <button type="button" class="btn btn-primary" (click)="createChannel()">Create</button>
+        </div>
+    </form>
+    
+    <div class="top-right-image">
+        <img src="/assets/image/channel.jpeg" alt="Description" class="small-image">
+    </div>
+</div>
+
+
+
+<!-- Channel Details Section -->
+<div *ngIf="showChannelDetails" class="channel-details">
+    <h2>Channel Details</h2>
+  
+    <h4>Invite Members</h4>
+    <div class="input-group">
+        <label for="email">Enter the Email Address to Invite:</label>
+      <input type="email" id="emailid" name="email" [(ngModel)]="userobj.emailid" required>
+    </div>
+    <div class="button-group">
+        <button type="button" class="btn btn-secondary" (click)="skipForNow()">Skip for Now</button>
+        <button type="button" class="btn btn-secondary" (click)="sendInvitation()">Send Invitation</button>
+    </div>
+</div>
+<app-sidebar [orgname]="orgname" [email]="userEmail"></app-sidebar>
+<app-header [orgname]="orgname" [email]="userEmail"></app-header>

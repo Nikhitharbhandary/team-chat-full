@@ -1,0 +1,188 @@
+.container {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 550px;
+  padding: 60px;
+  position: relative;
+  top: 200px;
+  left: 80px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+  width: 250px;
+  position: relative; /* Ensure relative positioning for absolute labels */
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: bold;
+  text-align: left; /* Align label text to the left */
+}
+
+.input-group input {
+  width: calc(100% - 16px); /* Adjusted width to accommodate padding */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: left;
+}
+
+.button-group {
+  text-align: center;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.styled-button {
+  background: none;
+  border: none;
+  color: #007bff;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 19px;
+  text-align: center;
+}
+
+.styled-button:hover {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+.top-right-image {
+  position: absolute;
+  top: 10px;
+  left: 350px;
+}
+
+.small-image {
+  width: 175px;
+  height: 200px;
+}
+
+.display-box {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  padding: 60px;
+  position: relative;
+  top: 200px;
+  left: 500px;
+}
+
+.visibility-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.visibility-options label {
+  margin-bottom: 5px;
+}
+
+.visibility-description {
+  margin-left: 10px;
+  color: #666;
+  font-size: 0.9em;
+}
+
+.button-group {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-group button {
+  margin: 0 5px; /* Add some space between buttons */
+}
+
+.channel-details {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 550px;
+ 
+  position: relative;
+  top: -100px;
+  left: 750px;
+
+
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container,.channel-details,.cha {
+      width: 60%;
+      padding: 15px;
+      top: 200px;
+      left: 65px;}
+
+  .input-group {
+      width: 100%;
+  }
+
+  .top-right-image {
+      position: relative;
+      top: 0;
+      left: 0;
+      margin-top: 10px;
+      text-align: center;
+  }
+
+  .small-image {
+      width: 50%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+  }
+}
+@media (max-width: 768px) {
+  .display-box,.channel-details {
+      
+      width: 60%;
+      padding: 15px;
+      top: 200px;
+      left: 110px;
+  }
+  .visibility-options {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .visibility-options label {
+    margin-bottom: 5px;
+  }
+  
+  .visibility-description {
+    margin-left: 10px;
+    color: #666;
+    font-size: 0.9em;
+  }
+  
+  .button-group {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .button-group button {
+    margin: 0 5px; /* Add some space between buttons */
+  }
+  
+}
